@@ -1,41 +1,50 @@
-# AI–Physical Execution Gap (AIPEG) manuscript revision
+# When the Algorithm Meets the Absent Facility
 
-This repository holds an **academic research editing** workspace for the chapter:
-
-**When the Algorithm Meets the Absent Facility: The AI–Physical Execution Gap in India’s E-Waste Circular Economy**
+Academic chapter on the **AI–Physical Execution Gap (AIPEG)** in India’s e-waste circular economy.
 
 Authors: Aditya Sharma, Hossein Tabasi (corresponding), Anurag Rana, Pankaj Vaidya — Shoolini University.
 
-It is a scholarly manuscript, not a web application.
+This is a scholarly manuscript with a reproducible computational appendix, not a web application.
 
-## What is here
+## PDF (start here)
+
+**[manuscript/When_the_Algorithm_Meets_the_Absent_Facility.pdf](manuscript/When_the_Algorithm_Meets_the_Absent_Facility.pdf)** — complete chapter, about 27 pages.
+
+Editable source: `manuscript/When_the_Algorithm_Meets_the_Absent_Facility_REVISED.md`
+
+## Reproduce the theory test (Section 6.5)
+
+```bash
+python3 -m pip install -r requirements.txt
+python3 analysis/run_experiment.py
+python3 analysis/build_pdf.py
+```
+
+The experiment implements equations (1)–(5), reproduces the four territorial regimes, and applies the same model to 30 named Indian origins. It does **not** claim a national estimate of circularity. Cost parameters are Appendix B assumptions. Facility hubs are public-coordinate proxies, not the unpublished CPCB geocoded register.
+
+Headline structural tests (from `results/headline_tests.csv`):
+
+- Consolidation-cost spread ₹248 vs haulage spread ₹0.56 (ratio ~443)
+- Component harvesting \(\varphi = 0\) everywhere (no licence)
+- Hinterland mean refurbishment \(\varphi\): 0.011 without a node, 0.536 with a node
+- Circularity Execution Ratio: 1.00 metro / state-capital; 0.00 hinterland without node; 1.00 hinterland with node (licensed, value-positive strategies only)
+
+## Repository layout
 
 | Path | Contents |
 | --- | --- |
-| `manuscript/When_the_Algorithm_Meets_the_Absent_Facility_REVISED.md` | Revised chapter (complete): reconstructed prose, preserved constructs, equations, tables, citations, and numbers |
-| `editorial/SECTION_BY_SECTION_DIAGNOSTIC.md` | Argument diagnosis, Turnitin similarity/AI-report analysis, section notes, evidence flags |
-| `originals/turnitin-reports/` | Unmodified Turnitin PDFs (similarity ~7%; AI-writing overlay ~42%) |
+| `manuscript/*.pdf` | Printable chapter |
+| `manuscript/*.md` | Full text |
+| `analysis/` | Model, experiment, PDF builder |
+| `data/` | Cited indicators + origin/hub coordinates |
+| `results/` | CSV tables and figures |
+| `editorial/` | Similarity/AI-writing diagnostic from the prior editing pass |
+| `originals/turnitin-reports/` | Unmodified Turnitin PDFs |
 
-Source PDFs were not overwritten.
+## Citations
 
-## How the revision was done
-
-The supplied files were Turnitin overlays of `anuragsir_REVISED.docx` (3 September 2026), not a separate `.docx`. Two unique documents were identified (each uploaded twice). The later-modified file is the AI-writing report; the earlier one is the similarity report. Chapter text was recovered from those overlays.
-
-Editing followed idea-level reconstruction: keep AIPEG and the five executability conditions (availability, accessibility, capacity, viability, legibility), keep all statistics, equations, tables, and references, and rewrite argumentative prose rather than synonym-spin. Unsourced or snapshot-dependent figures are flagged in the diagnostic, not invented.
-
-## Working with the manuscript
-
-- Open the Markdown file in any editor, or import it into Word / Google Docs / Overleaf (convert headings and equations as needed).
-- Equations are in LaTeX (`\( \)` / `\[ \]`). Tables are GitHub-flavoured Markdown.
-- Before journal submission, resolve every **[VERIFY DATA]** and **[ATTRIBUTION CHECK REQUIRED]** item in `editorial/SECTION_BY_SECTION_DIAGNOSTIC.md`.
-
-## Integrity notes
-
-- No new citations, DOIs, or statistics were added.
-- Similarity reduction was not treated as a score-chasing objective.
-- The AI-writing percentage was used only to locate formulaic passages.
+National statistics in Section 4 are tied to published sources (Baldé et al. 2024; MoEFCC/Lok Sabha 2025; PIB PRID 2102701; TRAI 2025; NITI Aayog 2026; ICEA 2024; Turaga et al. 2019). No fabricated DOIs or operator datasets.
 
 ## Licence / use
 
-The chapter remains the authors’ intellectual work. This repository records an editorial revision for the authors’ use.
+The chapter remains the authors’ intellectual work.

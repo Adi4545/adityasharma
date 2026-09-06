@@ -8,11 +8,11 @@ Aditya Sharma¹, Hossein Tabasi¹*, Anurag Rana¹, Pankaj Vaidya¹
 
 ## Abstract
 
-Recommendation models can now classify an end-of-life electronic device, score its condition, price its residual value, and rank circular recovery options in well under a second. That computational cheapness has outrun the physical system in which the recommendations are supposed to land. India is the world’s third-largest source of electronic waste, generating about 3.8 million metric tonnes a year under international accounting conventions, with generation projected to approach 14 million tonnes by 2030. Against that volume the formal layer is thin: roughly 322 registered recyclers and 72 registered refurbishers for a population of 1.4 billion, processing capacity clustered in a few industrial regions, rural collection largely missing, and about 30 percent of volume by formal accounting—considerably more by independent estimate—still moving through informal channels that have no digital interface.
+Recommendation models can now classify an end-of-life electronic device, score its condition, price its residual value, and rank circular recovery options in well under a second. That computational cheapness has outrun the physical system in which the recommendations are supposed to land. India is among the world’s three largest sources of electronic waste. The Global E-waste Monitor 2024 records 4.1 million tonnes generated in India in 2022, third after China (Baldé et al., 2024). A NITI Aayog synthesis of the same international accounting family puts generation at about 6.19 million tonnes in 2024 and on course for 14 million tonnes by 2030 (NITI Aayog, 2026). India’s own official series, estimated by the CPCB from producer sales and prescribed equipment lives, is much smaller: 1,254,286.55 tonnes in FY 2023–24 and 1,397,955.59 tonnes in FY 2024–25, with formal collection-and-processing shares of 61.94 percent and 70.71 percent against those official denominators (MoEFCC, 2025). Against any of these volumes the licensed layer is thin. As of 9 February 2025 the CPCB portal listed 322 registered recyclers (reported capacity 2,208,918.064 tonnes a year) and 72 registered refurbishers (92,042.18 tonnes a year) (Press Information Bureau, 2025). Independent industry estimates still assign about 90 percent of collection and 70 percent of recycling to informal actors (ICEA, 2024).
 
 The claim of this chapter is straightforward and easy to miss: an AI recommendation is not a circular outcome. Using India’s semiconductor-dense device stream, and smartphones in particular, as the empirical setting, we define the **AI–Physical Execution Gap (AIPEG)** as the systematic divergence between the circular pathway an algorithm ranks as optimal and the subset of pathways that a territory’s physical, institutional, logistical, and market infrastructure can actually deliver. Executability is specified as five simultaneous conditions—**availability, accessibility, capacity, viability, and legibility**. From those conditions we construct an Execution Feasibility Index and a Circularity Execution Ratio, locate the binding constraint at each stage of the smartphone circular chain, and formalise the reverse-logistics economics of the rural–urban divide. India’s Extended Producer Responsibility (EPR) rules and digital public infrastructure are then examined as possible gap-narrowing or gap-widening designs.
 
-An illustrative computation under stated parameter assumptions shows that, for small devices, consolidation dominates haulage distance by more than two orders of magnitude. Consolidation still cannot restore feasibility where no licensed executor exists. The chapter therefore proposes **Infrastructure-Constrained Circular AI**: a design stance in which facility availability, distance, transport economics, and real-time capacity enter the objective function as constraints, not as friction discovered after the recommendation has already been issued.
+A reproducible computation under the chapter’s stated parameter assumptions, and a 30-origin Indian geographic panel, shows that for small devices the consolidation term dominates haulage by more than two orders of magnitude (spread ₹248 versus ₹0.56 per device). Harvesting remains at φ = 0 wherever no licence exists. On the geographic panel the Circularity Execution Ratio for hinterland origins is 0 without an aggregation node and 1 once a node is introduced—provided a licensed refurbishment pathway exists. The chapter therefore proposes **Infrastructure-Constrained Circular AI**: a design stance in which facility availability, distance, transport economics, and real-time capacity enter the objective function as constraints, not as friction discovered after the recommendation has already been issued.
 
 **Keywords:** circular economy; artificial intelligence; electronic waste; India; reverse logistics; Extended Producer Responsibility; infrastructure constraints; emerging markets; semiconductor devices; rural–urban divide
 
@@ -32,7 +32,7 @@ The limiting factor in emerging-market circularity is no longer the ability to i
 
 That invisibility has practical stakes. Programmes can post rising circularity on the strength of recommendations issued, EPR certificates traded, or platform-reported diversion even as material outcomes stall or worsen. We call the resulting artefact **phantom circularity**: algorithmically legitimated circular intent that is never physically realised, yet is counted, reported, and, under certificate-based compliance, monetised.
 
-India is a demanding test of this claim. It is the third-largest generator of e-waste, and generation is growing faster than the infrastructure meant to absorb it. Formal recovery capacity sits in a small number of industrial clusters, while the device population is national and majority rural. At the same time, the E-Waste (Management) Rules, 2022, the Central Pollution Control Board (CPCB) EPR portal, and India’s digital public infrastructure together form one of the more digitally mediated waste-governance regimes among emerging economies—hence a real test of whether digital coordination can stand in for physical capacity. Composition matters as well. The stream is increasingly made of small, semiconductor-dense, high-value-per-kilogram devices, principally smartphones, whose circular economics are unusually sensitive to logistics cost, the variable current recommendation systems are least likely to represent.
+India is a demanding test of this claim. It is among the three largest generators of e-waste (Baldé et al., 2024), and generation is growing faster than the infrastructure meant to absorb it (NITI Aayog, 2026). Formal recovery capacity sits in a small number of industrial clusters, while India’s population of about 1.44 billion remains majority rural in settlement structure (United Nations DESA, 2024) and 523.58 million wireless subscriptions were rural as of 31 December 2024 out of 1,150.66 million wireless subscriptions nationally (TRAI, 2025). At the same time, the E-Waste (Management) Rules, 2022, the CPCB EPR portal, and India’s digital public infrastructure together form one of the more digitally mediated waste-governance regimes among emerging economies—hence a real test of whether digital coordination can stand in for physical capacity. Composition matters as well. The stream is increasingly made of small, semiconductor-dense, high-value-per-kilogram devices, principally smartphones, whose circular economics are unusually sensitive to logistics cost, the variable current recommendation systems are least likely to represent.
 
 ### 1.1 Research questions
 
@@ -42,7 +42,7 @@ Three questions organise the chapter.
 - **RQ2.** Which of the executability conditions binds first, and does the binding condition change systematically with distance from a formal facility cluster?
 - **RQ3.** Do India’s certificate-based Extended Producer Responsibility regime and its digital public infrastructure stack narrow the execution gap, or does the design of either widen it?
 
-Sections 2 and 3 answer RQ1 conceptually and formally. Sections 4 to 6 address RQ2 through India’s material substrate, a stage-by-stage bottleneck analysis, and a break-even computation. Sections 7 and 8 take up RQ3 and the design consequences.
+Sections 2 and 3 answer RQ1 conceptually and formally. Sections 4 to 6 address RQ2 through India’s material substrate, a stage-by-stage bottleneck analysis, a break-even computation, and a reproducible geographic panel (Section 6.5). Sections 7 and 8 take up RQ3 and the design consequences. The code and datasets are described in Appendix C.
 
 ---
 
@@ -142,7 +142,7 @@ The measure is useful for policy in three respects. Because \(\varphi\) is multi
 
 ### 3.5 The status of these measures
 
-\(\varphi\) and CER are proposed measurement instruments, not validated indices. Their parameters—particularly the accessibility decay parameters \(\beta\) and \(\delta_{1/2}\), the consolidation factor, and the normalisation of \(V\)—require calibration against operator-level logistics and facility data that are not currently in the public domain. Section 6 computes both quantities for a small set of stated parameter assumptions in order to show the structure of the framework and the relative magnitude of its terms. Those computations are illustrative. They are not empirical estimates of Indian circularity, and they should not be cited as such. Section 9.4 sets out what a first empirical estimation would require.
+\(\varphi\) and CER are proposed measurement instruments, not validated field indices. Section 6.3 reports an illustrative computation under Appendix B. Section 6.5 implements those same equations on a 30-origin Indian geographic panel. Neither exercise is a census of Indian circularity: accessibility decay parameters remain uncalibrated against operator logs, and the hub file is a literature-informed proxy for the unpublished geocoded CPCB register. The results test the *structure* of the theory. Section 9.4 sets out what a first empirical estimation from the live portal would require.
 
 ---
 
@@ -150,31 +150,25 @@ The measure is useful for policy in three respects. Because \(\varphi\) is multi
 
 ### 4.1 Volume, composition, and trajectory
 
-India’s e-waste generation is approximately 3.8 million metric tonnes per annum under international monitoring conventions, making it the third-largest generator in the world after China and the United States (Baldé et al., 2024). Generation is projected to reach roughly 14 million tonnes by 2030 on a business-as-usual path of device penetration, income growth, shortening replacement cycles, and the electronification of formerly non-electronic product categories.
+International monitors and the Government of India do not report the same Indian e-waste volume, and the gap is large enough to be a finding rather than a footnote. The Global E-waste Monitor 2024 lists India at 4.1 million tonnes in 2022, third in the world after China (Baldé et al., 2024). NITI Aayog, citing the same ITU/UNITAR family, reports a rise from about 2.76 million tonnes in 2020 to about 6.19 million tonnes in 2024 and a projection of 14 million tonnes by 2030 (NITI Aayog, 2026). A market assessment by RedSeer (2025) gives 3.8 million tonnes for FY 2024 and likewise ranks India third. CPCB estimates, built from registered producers’ sales and prescribed average lives under the 2022 Rules, are 1,254,286.55 tonnes in FY 2023–24 and 1,397,955.59 tonnes in FY 2024–25 (MoEFCC, 2025). Formal collection-and-processing shares against that official denominator were 61.94 percent and 70.71 percent in those two years (MoEFCC, 2025).
 
-For the argument developed here, composition matters more than size. India has recorded among the fastest growth rates in the world in screens, computing equipment, and small information and telecommunications equipment: the fraction that is semiconductor-dense, low in unit mass, high in unit value, and rich in critical and precious metals. The country has more than a billion active mobile connections, and aggressive device financing and trade-in promotion are shortening handset replacement cycles. A smartphone weighs roughly 180 to 200 grams and contains gold, silver, palladium, copper, cobalt, lithium, tantalum, and rare-earth elements at concentrations that make its printed circuit board assembly one of the most metal-dense materials in the anthropogenic environment, richer per tonne than primary ore by orders of magnitude. That is exactly the device class that most rewards high-R strategies and most penalises long-distance, low-density reverse logistics. Smartphone circularity is therefore governed by the variable recommendation systems are least likely to represent.
+Composition matters more than the headline tonne count for this chapter. India recorded among the fastest growth rates in screens, computing equipment, and small IT and telecommunication equipment (Baldé et al., 2024). TRAI counted 1,150.66 million wireless subscriptions on 31 December 2024, of which 523.58 million were rural (TRAI, 2025). A smartphone typically weighs 180–200 grams and concentrates gold, silver, palladium, copper, cobalt, lithium, tantalum, and rare-earth elements in the printed circuit board. Urban-mining studies have long noted that such boards can be richer per tonne than many primary ores (Zeng, Mathews, & Li, 2018). That is the device class that most rewards high-R strategies and most penalises unconsolidated reverse logistics.
 
 ### 4.2 Evidence of data asymmetry
 
-Credible Indian e-waste figures diverge by a factor of about three. International monitoring, which estimates generation from apparent consumption and product lifespan distributions, puts annual arisings close to 4 million tonnes. Official Indian figures, derived from registered producers’ sales data and prescribed average equipment lifespans and published through the CPCB EPR portal, recorded approximately 1.25 million tonnes in FY 2023–24 and 1.40 million tonnes in FY 2024–25, with official collection-and-processing shares of roughly 62 percent and 71 percent respectively against those figures. Independent assessments have repeatedly found that the unorganised sector handles the bulk of Indian e-waste, commonly estimated at between 70 and 90 percent.
-
-The divergence is not a puzzle to be “resolved” by picking the better error. It is evidence for the argument of this chapter. The formal system measures against the official denominator; the country loses material against the international one. The ratio between them is a crude but usable proxy for the legibility dimension of the execution gap. Steeply rising formal processing rates against the smaller denominator, while independent estimates of informal processing remain flat, is phantom circularity in textbook form: improvement in the measurement apparatus read as improvement in material outcomes. An AI system trained on portal data inherits this bias structurally. It learns what the formal system can see, optimises inside that boundary, and is blind by construction to most of the material it is supposed to govern.
+The series in Section 4.1 diverge by a factor of about three to five, depending on which international figure is used as the numerator. That is not an error to be averaged away. CPCB measures against an official sales-based denominator; the country loses material against the apparent-consumption denominator used by Baldé et al. (2024). The ratio is a crude proxy for the **legibility** dimension of AIPEG. Formal processing shares that climb from 61.94 to 70.71 percent against 1.25–1.40 million tonnes can be reported as a compliance success while independent estimates continue to place most physical handling outside the portal. ICEA (2024) attributes about 90 percent of collection volume and 70 percent of recycling volume to the informal sector. Turaga et al. (2019) similarly report that more than 90 percent of Indian e-waste has been processed informally. NITI Aayog (2026) still describes the informal sector as dominant (about 62 percent in its synthesis). Rising portal rates against a smaller official base, alongside a persistently large informal share on independent measures, is phantom circularity: improvement in the measurement apparatus read as improvement in material outcomes. An AI system trained only on portal data inherits that boundary.
 
 ### 4.3 Composition and scarcity of facilities
 
-The formal execution layer for this volume comprises roughly 322 registered recyclers and 72 registered refurbishers. Registration counts on the CPCB EPR portal are dynamic and have ranged between approximately 300 and 450 authorised dismantlers and recyclers across recent reporting cycles, depending on category definition and reporting date. The composition of that register is more stable than the headline count, and composition is what matters analytically.
+As of 9 February 2025 the CPCB EPR portal listed 322 registered recyclers with reported capacity of 2,208,918.064 tonnes a year and 72 registered refurbishers with 92,042.18 tonnes a year (Press Information Bureau, 2025). The ratio is 4.47 recyclers per refurbisher. NITI Aayog (2026) notes that 30 high-capacity recyclers controlled over 60 percent of formal processing capacity in the ICEA compilation it reports. Density is thin relative to 1.44 billion people (United Nations DESA, 2024) and more than a billion wireless subscriptions (TRAI, 2025). The register is also biased toward the lower R-strategies: even a perfect optimiser recommending refurbishment at scale would face an execution layer more than four times thinner than the recycling layer. Licensing categories are built around dismantling and material recovery. Component harvesting, repair-grade parts qualification, and module remanufacturing have no dedicated home, so the intermediate strategies that retain the most value for semiconductor devices have no reliable formal executor.
 
-Three features stand out. Absolute density is thin: a few hundred facilities serve a device population numbering in the billions, a facility-to-population ratio at least an order of magnitude below that of jurisdictions with comparable circular ambition. There are roughly 4.5 recyclers for every refurbisher, so the formal system is biased toward the lower end of the R-hierarchy. That is availability expressed as systematic distortion rather than random shortage: even a perfect optimiser recommending refurbishment at scale would face an execution layer about four and a half times thinner than the layer for material recycling. Licensing categories, moreover, are built around dismantling and material recovery rather than component-level harvesting, repair-grade parts qualification, or module-level remanufacturing. The intermediate R-strategies that retain the most value for semiconductor devices have no dedicated regulatory home and therefore no reliable execution layer.
-
-Capacity is also spatially concentrated. Registered recycling facilities are present in only a minority of states, and installed processing capacity is heavily concentrated in a small number of industrial regions that handle a disproportionate share of national throughput. Generation is national. A large share of arisings originates outside the metropolitan cores that host processing capacity, and a substantial share originates in districts several hundred kilometres from any licensed facility. That mismatch—where devices are retired versus where they can be processed—is the material basis of the accessibility dimension.
+Capacity is spatially concentrated. NITI Aayog (2026) cites 2,808 collection centres for the national population. Generation is not. A large share of arisings originates outside the metropolitan cores that host processing plants, including districts several hundred kilometres from any licensed facility. That mismatch is the material basis of the accessibility dimension. Section 6.5 measures it on a 30-origin panel.
 
 ### 4.4 The shadow execution layer: the informal sector
 
-By formal accounting, about 30 percent of India’s e-waste is processed through informal channels; by independent estimate, considerably more. The analytical point is not the percentage. It is the functional role. The informal sector is not the absence of an execution layer. It is a second execution layer, with a materially better profile on three of the five executability dimensions and a catastrophic profile on the remaining two.
+If official formal shares are 61.94–70.71 percent of the CPCB denominator, residual official-informal volume on that denominator is about 29–38 percent. Independent estimates are higher, as noted above (Turaga et al., 2019; ICEA, 2024; NITI Aayog, 2026). The analytical point is the functional role, not the exact percentage. The informal sector is a second execution layer, stronger on accessibility, viability, and elastic capacity, and near zero on legibility and on environmental and occupational quality. Open burning, acid leaching, and manual desoldering recover part of the available metal while imposing health externalities on workers and nearby communities (Chatterjee & Kumar, 2009; Wath et al., 2011; Awasthi & Li, 2017). ICEA (2024) notes that informal collectors can offer higher prices because their cost structure excludes GST and EHS compliance—the viability channel in our terms.
 
-Accessibility is strong: in dense urban settlements and in small towns and villages without formal collection, itinerant buyers reach households at the doorstep. Viability is strong as well. Cash is paid on the spot at prices formal buy-back schemes seldom match, because the cost structure excludes compliance, environmental control, formal labour cost, and taxation. Capacity is elastic; the network absorbs volume spikes without capital investment. Legibility is close to zero. Transactions leave no digital trace, and actors are structurally excluded from a portal-based EPR architecture that presupposes registration, documentation, and formal invoicing. Circular quality fails on environmental and occupational grounds: open burning, acid leaching, and manual desoldering recover part of the available metal content while imposing severe health externalities on workers and surrounding communities (Chatterjee & Kumar, 2009; Wath et al., 2011; Awasthi & Li, 2017).
-
-The strategic implication is uncomfortable and hard to avoid. Across much of India the informal sector is the only actor capable of performing collection and aggregation at all. An AI architecture that treats informality purely as a compliance problem to be eliminated will issue recommendations that cannot be executed outside a handful of metropolitan clusters. An architecture that treats it as an execution asset to be selectively formalised—keeping its accessibility and viability advantages while progressively substituting its processing functions—faces a different feasibility frontier. Sections 7 and 8 develop that design choice.
+Across much of India this layer is the only actor that performs last-mile collection. An AI architecture that treats informality only as a compliance defect will recommend pathways that cannot run outside a handful of clusters. An architecture that treats it as an execution asset to be selectively formalised faces a different feasibility frontier. Sections 7 and 8 take up that design choice.
 
 ---
 
@@ -194,7 +188,7 @@ Machine vision and diagnostic software can assign an initial R-strategy, grade c
 
 ### 5.4 Stage 4: Reconditioning and refurbishment
 
-For a functional handset with a degraded battery, refurbishment is almost always the value-maximising strategy, because it retains the device’s full embodied impact. Lawful, warrantied resale requires genuine or qualified spare parts, service documentation, diagnostic access, and an authorised entity. Availability binds immediately and hard: there are 72 registered refurbishers nationally. Manufacturers’ parts policies further restrict the supply of spares for older models, and repairability varies considerably across device designs. India’s evolving right-to-repair framework bears directly on this stage, because it acts on the constraint that determines whether the highest-value R-strategy is executable at all.
+For a functional handset with a degraded battery, refurbishment is almost always the value-maximising strategy, because it retains the device’s full embodied impact. Lawful, warrantied resale requires genuine or qualified spare parts, service documentation, diagnostic access, and an authorised entity. Availability binds immediately and hard: there were 72 registered refurbishers nationally as of 9 February 2025 (Press Information Bureau, 2025). Manufacturers’ parts policies further restrict the supply of spares for older models, and repairability varies considerably across device designs. India’s evolving right-to-repair framework bears directly on this stage, because it acts on the constraint that determines whether the highest-value R-strategy is executable at all.
 
 ### 5.5 Stage 5: Component harvesting
 
@@ -206,7 +200,7 @@ Manual and semi-automated dismantling separates battery, display, board, housing
 
 ### 5.7 Stage 7: Refining and material recovery
 
-Recovering gold, silver, palladium, copper, and cobalt from board fractions requires hydrometallurgical or pyrometallurgical capability, a technical standard only a fraction of registered recyclers meet. India’s integrated capacity to refine high-value precious metals from electronic scrap is limited, and part of the highest-value fraction is exported for refining—an outcome that satisfies material circularity in the global aggregate while forgoing domestic value capture. Rare-earth elements are recovered from Indian e-waste at a negligible rate, consistent with the global pattern in which recovery meets on the order of one percent of demand. At this stage the binding constraints are capacity and viability, and the limiting factor is the sophistication of installed technology rather than the number of registered facilities.
+Recovering gold, silver, palladium, copper, and cobalt from board fractions requires hydrometallurgical or pyrometallurgical capability, a technical standard only a fraction of registered recyclers meet. India’s integrated capacity to refine high-value precious metals from electronic scrap is limited, and part of the highest-value fraction is exported for refining—an outcome that satisfies material circularity in the global aggregate while forgoing domestic value capture. Rare-earth elements are recovered from e-waste at a negligible rate globally: the Global E-waste Monitor reports that about 1 percent of rare-earth demand is met by e-waste recycling (Baldé et al., 2024). At this stage the binding constraints are capacity and viability, and the limiting factor is the sophistication of installed technology rather than the number of registered facilities.
 
 ### 5.8 Stage 8: Resale of recovered materials and refurbished devices
 
@@ -306,13 +300,47 @@ This inverts the conventional intervention logic. The standard prescription for 
 
 It also redefines what AI should be doing in rural India. Per-device pathway recommendation is not a useful computation there, because it is precisely the computation whose output cannot be acted upon. The useful computation is aggregation-node siting and consolidation scheduling: where to place a node, at what cost, to convert the largest volume of currently inexecutable recommendations into executable volume, and when to dispatch once accumulated volume makes dispatch worthwhile. That is a facility-location and inventory-routing problem under uncertainty, a class of problems with mature methods, and one tractable with data India already collects.
 
+### 6.5 A reproducible geographic test of the theory
+
+The four-regime arithmetic of Table 3 can be accused of having been chosen to illustrate the argument. We therefore implement equations (1)–(5) in open code and apply them to thirty named Indian origins whose coordinates are public: eight metropolitan cores, ten state capitals treated as mid-periphery collection points, and twelve hinterland districts (including Nuapada, Odisha, the opening vignette). Each origin is assigned a road distance to the nearest of nine literature-informed processing hubs (Delhi-NCR, Moradabad, Bengaluru, Hyderabad, Chennai, Mumbai, Pune, Ahmedabad, Kolkata) using great-circle distance scaled by a road circuity factor of 1.30. Cost parameters remain those of Appendix B. Accessibility is evaluated on distance to the first formal custody point, so a hinterland aggregation node shortens first-mile distance even when the licensed plant remains far away. Component harvesting remains unlicensed (\(A = 0\)) in every location. Full tables are in `results/`; figures are generated by `analysis/run_experiment.py`.
+
+Three structural tests of the theory survive this geographic extension.
+
+**T1. Consolidation, not haulage, dominates small-device transport cost.** On the Appendix B regimes, haulage ranges from ₹0.03 to ₹0.59 per device (spread ₹0.56). The consolidation term ranges from ₹2.00 to ₹250.00 (spread ₹248). The ratio of those spreads is about 443:1, more than two orders of magnitude, reproducing the claim of Section 6.3 on an independent implementation of equation (3).
+
+**T2. Availability is non-compensatory.** Maximum \(\varphi\) for component harvesting is 0.00 in every regime and every origin, including metropolitan cores where surplus is positive (about ₹198). Formal material recycling of a single handset has negative surplus in every regime (metropolitan \(S = -37\)), so \(V = 0\) and \(\varphi = 0\). Nodes do not substitute for a licence, and they do not repair a negative margin. That is the conjunctive structure of equation (1).
+
+**T3. Hinterland executability is a node problem.** Mean refurbishment \(\varphi\) across the twelve hinterland origins is 0.011 without a node and 0.536 with a node. Using a decision threshold \(\varphi > 0.10\), the Circularity Execution Ratio (equation 2) is 1.00 in metropolitan origins and in state capitals with a collection point, 0.00 in hinterland origins without a node, and 1.00 once a node is added—**but only for licensed, value-positive strategies**. Harvesting never enters the executable set. Nuapada, the vignette district, lies about 742 road-kilometres from the nearest hub (Hyderabad) in this proxy network; without a node \(\varphi \approx 0\) for every strategy.
+
+These results do not estimate India’s true CER. They show that, given published facility scarcity, public geography, and the chapter’s own cost assumptions, the theory’s qualitative predictions are internally consistent and geographically non-trivial. A live CPCB geocoded register would replace the nine-hub proxy; it would not replace the multiplicative test.
+
+![Figure 1. Transport cost decomposition](../results/figures/fig1_transport_decomposition.png)
+
+**Figure 1.** Haulage versus consolidation cost per device for refurbishment under Appendix B.
+
+![Figure 2. φ by regime](../results/figures/fig2_phi_by_regime.png)
+
+**Figure 2.** Execution Feasibility Index by territorial regime and strategy. Harvesting and per-handset recycling remain at zero.
+
+![Figure 3. Geographic φ](../results/figures/fig3_district_phi_map.png)
+
+**Figure 3.** Refurbishment \(\varphi\) at thirty origins, without added hinterland nodes.
+
+![Figure 4. Surplus sensitivity](../results/figures/fig4_surplus_sensitivity.png)
+
+**Figure 4.** Net surplus \(S\) for refurbishment across a grid of \(n\) and \(\delta\). Variation in \(n\) dominates variation in \(\delta\).
+
+![Figure 5. CER](../results/figures/fig5_cer_by_class.png)
+
+**Figure 5.** Circularity Execution Ratio on the thirty-origin panel (threshold \(\varphi > 0.10\)).
+
 ---
 
 ## 7. Institutional, Policy and Market Conditions for Closing the Gap
 
 ### 7.1 What the E-Waste (Management) Rules, 2022 cover, and what they do not
 
-The regime notified in November 2022 and in force from April 2023 is ambitious on paper. Product coverage is wider than under earlier rules. Registration and filing run through a central CPCB portal. Collection targets rise by compliance year. Recyclers earn tradable EPR certificates against quantities recycled; producers buy those certificates to discharge their obligations. Circularity, in this design, is administered as a digital compliance market.
+The regime notified in November 2022 and in force from April 2023 is ambitious on paper. Product coverage is wider than under earlier rules. Registration and filing run through a central CPCB portal. Producer recycling targets under the Rules rise from 60 percent in FY 2023–24 and 2024–25 to 70 percent in FY 2025–26 and 2026–27 and 80 percent from FY 2027–28 (Government of India, 2022; Press Information Bureau, 2022). Recyclers earn tradable EPR certificates against quantities recycled; producers buy those certificates to discharge their obligations. Circularity, in this design, is administered as a digital compliance market.
 
 The five executability conditions expose how incomplete that market is. Legibility for registered actors is the dimension the Rules take most seriously: a national data spine now exists where none did. Viability is touched only indirectly, through certificate revenue that improves recycler economics. Availability is untouched. Nothing in a certificate market requires a plant in an underserved district or an authorisation category that does not already exist. Accessibility is not merely neglected; certificates are spatially fungible, so a certificate generated in a high-capacity industrial state can discharge an obligation arising from devices sold in a state with no facilities. Capacity signalling is absent as well. The portal records completed transactions, not unused throughput.
 
@@ -398,7 +426,7 @@ For producers and platform operators, circular targets defined over recommendati
 
 ### 9.3 Limitations
 
-Three limitations qualify these claims. First, this is a conceptual and formal framework that has not been empirically validated: the Execution Feasibility Index and the Circularity Execution Ratio are proposed instruments, and their parameters, particularly the accessibility decay parameters and the consolidation factor, require calibration against operator-level logistics and facility data that are not currently public. Second, the break-even computation in Section 6 is illustrative. Its parameter values are plausible order-of-magnitude figures rather than measured data, and it is intended to establish structure and relative magnitude rather than to estimate absolute quantities; the ranking of binding constraints it produces should be treated as a hypothesis, not a result. Third, the analysis is specific to smartphones. Its conclusions should extrapolate with adjustment to other small, semiconductor-dense devices, but large appliances, with different mass-to-value ratios and different transport economics, will exhibit materially different break-even structures and possibly a different rank-ordering of binding constraints.
+Three limitations qualify these claims. First, \(\varphi\) and CER remain uncalibrated against operator logs; Section 6.5 tests structural predictions on public geography and Appendix B prices, not a census of Indian circularity. Second, the nine processing hubs are proxies for an unpublished geocoded CPCB register; substituting the live register would change distances, not the multiplicative logic. Third, the analysis is specific to smartphones. Large appliances, with different mass-to-value ratios, will exhibit different break-even structures and possibly a different rank-ordering of binding constraints.
 
 ### 9.4 Future research
 
@@ -430,7 +458,7 @@ The last mile will settle India’s circular transition: the aggregation shed, t
 
 **Conflicts of interest.** The authors declare no competing interests.
 
-**Data availability.** No new data were generated. The illustrative computation reported in Section 6.3 uses the parameter values stated in Appendix B and can be reproduced from equations (1) and (3).
+**Data availability.** Published indicators used in Section 4 are tabulated with sources in `data/published_indicators.csv`. Origin and hub coordinates for Section 6.5 are in `data/district_origins.csv` and `data/facility_hubs.csv`. The computational implementation of equations (1)–(5) is `analysis/aipeg_model.py`; the experiment that writes Tables 3-equivalent results, the district panel, and Figures 1–5 is `analysis/run_experiment.py`. No confidential operator data were used. Appendix B parameters remain stated assumptions.
 
 **Declaration on the use of generative AI.** The authors used generative AI tools to assist with language editing and structural revision of the manuscript. All conceptual content, formal derivations, parameter choices, interpretations, and conclusions are the authors’ own, and the authors take full responsibility for the content of the published work.
 
@@ -462,19 +490,37 @@ Ghoreishi, M., & Happonen, A. (2020). New promises AI brings into circular econo
 
 Government of India. (2022). *E-Waste (Management) Rules, 2022*. Ministry of Environment, Forest and Climate Change, Gazette Notification.
 
+India Cellular and Electronics Association. (2024). *Pathways to circular economy in Indian electronics sector*. ICEA.
+
 Gundupalli, S. P., Hait, S., & Thakur, A. (2017). A review on automated sorting of source-separated municipal solid waste for recycling. *Waste Management, 60*, 56–74.
 
 Jensen, S. F., Kristensen, J. H., Adamsen, S., Christensen, A., & Waehrens, B. V. (2023). Digital product passports for a circular economy: Data needs for product life cycle decision-making. *Sustainable Production and Consumption, 37*, 242–255.
 
 Kirchherr, J., Reike, D., & Hekkert, M. (2017). Conceptualizing the circular economy: An analysis of 114 definitions. *Resources, Conservation and Recycling, 127*, 221–232.
 
+Ministry of Environment, Forest and Climate Change. (2025). *E-waste generation and collection: Reply in the Lok Sabha* (13.97 lakh tonnes in 2024–25). Government of India.
+
+NITI Aayog. (2026). *Advancing circular economy of waste electronic and electrical equipment (E-waste) and lithium-ion batteries in India*. Government of India.
+
 Nowakowski, P., & Pamuła, T. (2020). Application of deep learning object classifier to improve e-waste collection planning. *Waste Management, 109*, 1–9.
 
 Potting, J., Hekkert, M., Worrell, E., & Hanemaaijer, A. (2017). *Circular economy: Measuring innovation in the product chain*. PBL Netherlands Environmental Assessment Agency.
 
+Press Information Bureau. (2022). *E-Waste (Management) Rules, 2022: Salient features* (PRID 1881761). Government of India.
+
+Press Information Bureau. (2025). *Management of growing e-waste in the country* (PRID 2102701). Ministry of Environment, Forest and Climate Change, Government of India. (322 recyclers and 72 refurbishers as on 9 February 2025.)
+
+RedSeer. (2025). *Consumer-led e-waste market assessment*. RedSeer.
+
 Reike, D., Vermeulen, W. J. V., & Witjes, S. (2018). The circular economy: New or refurbished as CE 3.0? *Resources, Conservation and Recycling, 135*, 246–264.
 
 Sarc, R., Curtis, A., Kandlbauer, L., Khodier, K., Lorber, K. E., & Pomberger, R. (2019). Digitalisation and intelligent robotics in value chain of circular economy oriented waste management. *Waste Management, 95*, 476–492.
+
+Telecom Regulatory Authority of India. (2025). *Telecom subscription data as on 31st December 2024* (Press Release No. 16 of 2025; 11 March 2025). TRAI.
+
+Turaga, R. M. R., Bhaskar, K., Sinha, S., Hinchliffe, D., Hemkhaus, M., Arora, R., Chatterjee, S., Khetriwal, D. S., Radulovic, V., Singhal, P., & Sharma, H. (2019). E-waste management in India: Issues and strategies. *Vikalpa, 44*(3). https://doi.org/10.1177/0256090919880655
+
+United Nations Department of Economic and Social Affairs. (2024). *World population prospects 2024*. United Nations.
 
 Velenturf, A. P. M., & Purnell, P. (2021). Principles for a sustainable circular economy. *Sustainable Production and Consumption, 27*, 1437–1457.
 
@@ -483,6 +529,8 @@ Wath, S. B., Dutt, P. S., & Chakrabarti, T. (2011). E-waste scenario in India, i
 Wilson, D. C., Velis, C., & Cheeseman, C. (2006). Role of informal sector recycling in waste management in developing countries. *Habitat International, 30*(4), 797–808.
 
 Wilts, H., Bakas, I., Herczeg, M., Christis, M., Fischer, S., & Watson, D. (2016). *Digital circular economy: Opportunities and limits*. Wuppertal Institute for Climate, Environment and Energy.
+
+Zeng, X., Mathews, J. A., & Li, J. (2018). Urban mining of e-waste is becoming more cost-effective than virgin mining. *Environmental Science & Technology, 52*(8), 4835–4841.
 
 ---
 
@@ -562,3 +610,28 @@ The values below are plausible order-of-magnitude figures assembled from publish
 | Hinterland with node | 520 | 1400 | 60 | 23.33 | 0.59 |
 
 Execution Feasibility Index components in Table 3 are assigned as follows. \(A(r) = 1\) for refurbishment and material recycling, for which authorisation categories exist, and \(A(r) = 0\) for component harvesting, for which none does. \(Acc(d, r)\) is evaluated from the logistic form of Section 3.3 with the consolidation-adjusted effective distance. \(Cap(r, t)\) is set at 0.80 in the metropolitan core and mid-periphery and 0.75 where dispatch is batched. \(V(d, r) = 1\) where \(S > 0\) and 0 otherwise, consistent with the minimum-across-chain definition. \(L(d, r)\) reflects the share of the pathway passing through registered actors. Because \(A\), \(V\), and \(L\) are effectively binary at these parameter values, \(\varphi\) is driven almost entirely by whether an authorised executor exists and whether the pathway is value-positive, rather than by the continuous terms.
+
+---
+
+## Appendix C. Computational artefacts
+
+The following files reproduce Section 6.5.
+
+| Path | Role |
+| --- | --- |
+| `analysis/aipeg_model.py` | Equations (1)–(5) |
+| `analysis/run_experiment.py` | Table 3 reproduction, 30-origin panel, Figures 1–5 |
+| `data/published_indicators.csv` | Cited national statistics with sources |
+| `data/district_origins.csv` | Thirty Indian origins (lat/lon) |
+| `data/facility_hubs.csv` | Nine processing-hub proxies |
+| `results/table3_reproduction.csv` | Implemented Table 3 |
+| `results/district_phi.csv` | Origin–strategy panel |
+| `results/headline_tests.csv` | T1–T3 summary |
+| `results/figures/` | Figures 1–5 |
+
+Run:
+
+`python3 analysis/run_experiment.py`
+
+Road distance is great-circle kilometres times 1.30. Hubs are proxies for a geocoded CPCB register that is not published as a research dataset. Appendix B rupee values are unchanged assumptions. The exercise tests the theory’s structure; it is not a national CER estimate.
+

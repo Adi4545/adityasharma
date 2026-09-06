@@ -1,0 +1,31 @@
+place,state,lat,lon,settlement_class
+Mumbai,Maharashtra,19.0760,72.8777,metropolitan
+Delhi,Delhi,28.6139,77.2090,metropolitan
+Bengaluru,Karnataka,12.9716,77.5946,metropolitan
+Hyderabad,Telangana,17.3850,78.4867,metropolitan
+Chennai,Tamil Nadu,13.0827,80.2707,metropolitan
+Kolkata,West Bengal,22.5726,88.3639,metropolitan
+Pune,Maharashtra,18.5204,73.8567,metropolitan
+Ahmedabad,Gujarat,23.0225,72.5714,metropolitan
+Lucknow,Uttar Pradesh,26.8467,80.9462,mid_periphery
+Jaipur,Rajasthan,26.9124,75.7873,mid_periphery
+Bhopal,Madhya Pradesh,23.2599,77.4126,mid_periphery
+Bhubaneswar,Odisha,20.2961,85.8245,mid_periphery
+Nagpur,Maharashtra,21.1458,79.0882,mid_periphery
+Patna,Bihar,25.5941,85.1376,mid_periphery
+Ranchi,Jharkhand,23.3441,85.3096,mid_periphery
+Guwahati,Assam,26.1445,91.7362,mid_periphery
+Coimbatore,Tamil Nadu,11.0168,76.9558,mid_periphery
+Chandigarh,Chandigarh,30.7333,76.7794,mid_periphery
+Nuapada,Odisha,20.8070,82.5330,hinterland
+Bhawanipatna,Odisha,19.9072,83.1661,hinterland
+Barmer,Rajasthan,25.7521,71.3967,hinterland
+Jaisalmer,Rajasthan,26.9157,70.9083,hinterland
+Dantewada,Chhattisgarh,18.8945,81.3496,hinterland
+Kiphire,Nagaland,25.8960,94.7860,hinterland
+Tamenglong,Manipur,24.9930,93.4960,hinterland
+Keylong,Himachal Pradesh,32.5760,77.0330,hinterland
+Leh,Ladakh,34.1526,77.5771,hinterland
+Car Nicobar,Andaman and Nicobar,9.1740,92.7770,hinterland
+Bhuj,Gujarat,23.2420,69.6669,hinterland
+Gadchiroli,Maharashtra,20.1850,80.0050,hinterland

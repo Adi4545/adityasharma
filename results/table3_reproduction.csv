@@ -1,0 +1,13 @@
+strategy,delta_km,n,c_cons,M,haulage,cons_share,transport,S,A,Acc,Cap,V,L,phi,bind,technical_value,licensed,regime
+Refurbishment,25,200,400,850,0.03,2.0,2.03,847.97,1.0,0.9349,0.8,1.0,0.76,0.5684,—,1.0,True,Metropolitan core
+Component harvesting,25,200,400,200,0.03,2.0,2.03,197.97,0.0,0.9349,0.8,1.0,0.76,0.0,Availability,0.55,False,Metropolitan core
+Material recycling,25,200,400,-35,0.03,2.0,2.03,-37.03,1.0,0.9349,0.8,0.0,0.76,0.0,Viability,0.2,True,Metropolitan core
+Refurbishment,180,40,900,850,0.21,22.5,22.71,827.29,1.0,0.6985,0.8,1.0,0.86,0.4805,—,1.0,True,Mid-periphery
+Component harvesting,180,40,900,200,0.21,22.5,22.71,177.29,0.0,0.6985,0.8,1.0,0.86,0.0,Availability,0.55,False,Mid-periphery
+Material recycling,180,40,900,-35,0.21,22.5,22.71,-57.71,1.0,0.6985,0.8,0.0,0.86,0.0,Viability,0.2,True,Mid-periphery
+Refurbishment,520,1,250,850,0.59,250.0,250.59,599.41,1.0,0.0377,0.8,1.0,0.34,0.0103,Accessibility,1.0,True,"Hinterland, no node"
+Component harvesting,520,1,250,200,0.59,250.0,250.59,-50.59,0.0,0.0377,0.8,0.0,0.34,0.0,Availability,0.55,False,"Hinterland, no node"
+Material recycling,520,1,250,-35,0.59,250.0,250.59,-285.59,1.0,0.0377,0.8,0.0,0.34,0.0,Viability,0.2,True,"Hinterland, no node"
+Refurbishment,520,60,1400,850,0.59,23.33,23.93,826.07,1.0,0.9349,0.75,1.0,0.76,0.5329,—,1.0,True,Hinterland with node
+Component harvesting,520,60,1400,200,0.59,23.33,23.93,176.07,0.0,0.9349,0.75,1.0,0.76,0.0,Availability,0.55,False,Hinterland with node
+Material recycling,520,60,1400,-35,0.59,23.33,23.93,-58.93,1.0,0.9349,0.75,0.0,0.76,0.0,Viability,0.2,True,Hinterland with node
