@@ -6,6 +6,20 @@ Authors: Aditya Sharma, Hossein Tabasi (corresponding), Anurag Rana, Pankaj Vaid
 
 This is a scholarly manuscript with a reproducible computational appendix, not a web application.
 
+## GitHub
+
+**Repository:** [github.com/adi4545/originate](https://github.com/adi4545/originate)
+
+**GitHub Pages (after deploy):** [adi4545.github.io/originate](https://adi4545.github.io/originate/)
+
+Deploy or update on GitHub (requires a `GH_TOKEN` or `GITHUB_TOKEN` with `repo` scope for account `adi4545`):
+
+```bash
+./scripts/deploy_to_github.sh
+```
+
+Then enable **Settings → Pages → Build and deployment → GitHub Actions** on the repository.
+
 ## PDF (start here)
 
 **[manuscript/When_the_Algorithm_Meets_the_Absent_Facility.pdf](manuscript/When_the_Algorithm_Meets_the_Absent_Facility.pdf)** — complete chapter, about 27 pages.
