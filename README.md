@@ -8,11 +8,11 @@ This is a scholarly manuscript with a reproducible computational appendix, not a
 
 ## GitHub
 
-**Repository:** [github.com/adi4545/originate](https://github.com/adi4545/originate)
+**Repository:** [github.com/Adi4545/adityasharma](https://github.com/Adi4545/adityasharma)
 
-**GitHub Pages (after deploy):** [adi4545.github.io/originate](https://adi4545.github.io/originate/)
+**GitHub Pages (after deploy):** [adi4545.github.io/adityasharma](https://adi4545.github.io/adityasharma/)
 
-Deploy or update on GitHub (requires a `GH_TOKEN` or `GITHUB_TOKEN` with `repo` scope for account `adi4545`):
+Deploy or update on GitHub (requires a `GH_TOKEN` or `GITHUB_TOKEN` with `repo` scope for account `Adi4545`):
 
 ```bash
 ./scripts/deploy_to_github.sh

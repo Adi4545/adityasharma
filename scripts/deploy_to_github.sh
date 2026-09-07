@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Create github.com/adi4545/originate (if needed) and push main.
-# Requires GH_TOKEN or GITHUB_TOKEN with repo scope for account adi4545.
+# Push to github.com/Adi4545/adityasharma (create repo if missing).
+# Requires GH_TOKEN or GITHUB_TOKEN with repo scope for account Adi4545.
 
 set -euo pipefail
 
-GITHUB_USER="${GITHUB_USER:-adi4545}"
-REPO_NAME="${REPO_NAME:-originate}"
+GITHUB_USER="${GITHUB_USER:-Adi4545}"
+REPO_NAME="${REPO_NAME:-adityasharma}"
 REMOTE_NAME="${REMOTE_NAME:-github}"
 BRANCH="${BRANCH:-main}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
