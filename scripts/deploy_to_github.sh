@@ -35,7 +35,10 @@ else
   else
     git remote add "$REMOTE_NAME" "$REMOTE_URL"
   fi
-  git push -u "$REMOTE_NAME" "$BRANCH"
+  if ! git push -u "$REMOTE_NAME" "$BRANCH" 2>/tmp/git-push.log; then
+    echo "Regular push failed (likely unrelated history). Retrying with --force-with-lease..."
+    git push -u "$REMOTE_NAME" "$BRANCH" --force-with-lease
+  fi
 fi
 
 echo ""
