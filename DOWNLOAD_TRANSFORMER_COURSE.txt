@@ -1,0 +1,37 @@
+================================================================================
+  HOW TO GET YOUR PDFs (Save button in preview DOES NOT WORK — use this)
+================================================================================
+
+YOUR FILES ARE ALREADY IN THIS WORKSPACE. You do not need empty chat links.
+
+STEP 1 — Open the file panel
+  • In Cursor, click "Files" or the folder icon on the LEFT sidebar.
+
+STEP 2 — Download the ZIP (easiest)
+  • Navigate to: transformer-course/
+  • Find: Transformer_Course_All_PDFs.zip
+  • RIGHT-CLICK it → Download (or "Save As")
+
+STEP 3 — Or download the course PDF alone
+  • transformer-course/Transformer_Complete_Course_Attention_Is_All_You_Need.pdf
+  • OR at workspace root: Transformer_Course_Complete.pdf
+
+STEP 4 — Or use the Pull Request (browser)
+  • Open: https://cursor.com/codebase/aditya-sharma-1/originate/pull/6
+  • Click "Files changed"
+  • Click the PDF or ZIP filename → download from the PR view
+
+================================================================================
+  WHAT'S INSIDE THE ZIP
+================================================================================
+  1. Transformer_Complete_Course_Attention_Is_All_You_Need.pdf  (45 pages, full course)
+  2. Attention_Is_All_You_Need_Vaswani_2017.pdf                 (original paper)
+  3. Part0_How_To_Read_Attention_Is_All_You_Need.pdf            (Part 0 only)
+
+================================================================================
+  IF STILL STUCK
+================================================================================
+  Reply: "email me the zip" and connect Gmail in Cursor MCP settings.
+  Or give me a GitHub repo URL + token and I will push there for direct download.
+
+================================================================================
