@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this manuscript or computational appendix, please cite it as below."
+title: "When the Algorithm Meets the Absent Facility: The AI–Physical Execution Gap in India’s E-Waste Circular Economy"
+authors:
+  - family-names: Sharma
+    given-names: Aditya
+  - family-names: Tabasi
+    given-names: Hossein
+  - family-names: Rana
+    given-names: Anurag
+  - family-names: Vaidya
+    given-names: Pankaj
+affiliations:
+  - name: Shoolini University of Biotechnology and Management Sciences
+    city: Solan
+    region: Himachal Pradesh
+    country: IN
+    post-code: "173229"
+keywords:
+  - circular economy
+  - artificial intelligence
+  - electronic waste
+  - India
+  - reverse logistics
+  - Extended Producer Responsibility
+  - AIPEG
+version: "1.0"
+date-released: "2026-09-13"
+url: "https://github.com/Adi4545/adityasharma"
+repository-code: "https://github.com/Adi4545/adityasharma"
+type: unpublished
+license: "Copyright held by the authors"
+abstract: >
+  Recommendation models can classify end-of-life electronics and rank circular
+  pathways faster than India’s physical recovery system can execute them. This
+  manuscript defines the AI–Physical Execution Gap (AIPEG), measures executability
+  through availability, accessibility, capacity, viability, and legibility, and
+  provides a reproducible geographic panel for Indian smartphone reverse logistics.

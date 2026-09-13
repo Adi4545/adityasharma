@@ -1,4 +1,12 @@
 __pycache__/
 *.pyc
-uploads/
 .venv/
+uploads/
+transformer-course/
+Transformer_Course_Complete.pdf
+SYSTEM_DIAGNOSIS.md
+DOWNLOAD_TRANSFORMER_COURSE.txt
+editorial/
+originals/
+*.zip
+.DS_Store
