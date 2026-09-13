@@ -17,7 +17,8 @@ if [[ -z "$TOKEN" ]]; then
 fi
 
 export GH_TOKEN="$TOKEN"
-REMOTE_URL="https://${GITHUB_USER}:${TOKEN}@github.com/${GITHUB_USER}/${REPO_NAME}.git"
+# Fine-grained PATs require x-access-token as the git username.
+REMOTE_URL="https://x-access-token:${TOKEN}@github.com/${GITHUB_USER}/${REPO_NAME}.git"
 
 cd "$ROOT"
 
@@ -35,9 +36,24 @@ else
   else
     git remote add "$REMOTE_NAME" "$REMOTE_URL"
   fi
+  git fetch "$REMOTE_NAME" "$BRANCH" || true
   if ! git push -u "$REMOTE_NAME" "$BRANCH" 2>/tmp/git-push.log; then
-    echo "Regular push failed (likely unrelated history). Retrying with --force-with-lease..."
-    git push -u "$REMOTE_NAME" "$BRANCH" --force-with-lease
+    if rg -q 'workflow scope' /tmp/git-push.log 2>/dev/null; then
+      echo "PAT lacks workflow scope; pushing without .github/workflows ..."
+      tmp_branch="github-push-$(date +%s)"
+      git checkout -b "$tmp_branch"
+      git rm -r --ignore-unmatch .github/workflows 2>/dev/null || true
+      git diff --cached --quiet || git commit -m "Omit GitHub Actions workflow (PAT needs workflow scope)"
+      git push -u "$REMOTE_NAME" "$tmp_branch:$BRANCH" --force-with-lease
+      git checkout -
+      git branch -D "$tmp_branch"
+    elif rg -q 'unrelated histories\\|rejected\\|non-fast-forward' /tmp/git-push.log 2>/dev/null; then
+      echo "Regular push failed (unrelated history). Retrying with --force-with-lease..."
+      git push -u "$REMOTE_NAME" "$BRANCH" --force-with-lease
+    else
+      cat /tmp/git-push.log >&2
+      exit 1
+    fi
   fi
 fi
 
